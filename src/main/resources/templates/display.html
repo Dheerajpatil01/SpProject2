@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Display Employees</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.navbar{
+    background:#1e3a8a;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:25px;
+    font-size:18px;
+}
+
+.container{
+    width:90%;
+    margin:40px auto;
+}
+
+h1{
+    color:#1e3a8a;
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#1e3a8a;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a th:href="@{/create}">Create</a>
+    <a th:href="@{/display}">Display</a>
+    <a th:href="@{/raise}">Raise Salary</a>
+    <a th:href="@{/exit}">Exit</a>
+</div>
+
+<div class="container">
+
+<h1>Employee Details</h1>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Designation</th>
+    <th>Salary</th>
+</tr>
+
+<tr th:each="emp : ${employees}">
+    <td th:text="${emp.id}"></td>
+    <td th:text="${emp.name}"></td>
+    <td th:text="${emp.age}"></td>
+    <td th:text="${emp.designation}"></td>
+    <td th:text="${emp.salary}"></td>
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>

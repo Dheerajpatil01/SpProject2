@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create Employee</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    margin:0;
+}
+
+.navbar{
+    background:#1e3a8a;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:25px;
+    font-size:18px;
+}
+
+.container{
+    width:450px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px 20px;
+    margin-right:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a th:href="@{/create}">Create</a>
+    <a th:href="@{/display}">Display</a>
+    <a th:href="@{/raise}">Raise Salary</a>
+    <a th:href="@{/exit}">Exit</a>
+</div>
+
+<div class="container">
+
+<h2>Create Employee</h2>
+
+<form th:action="@{/save}"
+      th:object="${employee}"
+      method="post">
+
+<label>Name</label>
+<input type="text" th:field="*{name}">
+<span th:errors="*{name}" style="color:red"></span>
+
+<label>Age</label>
+<input type="number" th:field="*{age}">
+<span th:errors="*{age}" style="color:red"></span>
+
+<label>Designation</label>
+
+<select th:field="*{designation}">
+    <option value="programmer">Programmer</option>
+    <option value="manager">Manager</option>
+    <option value="tester">Tester</option>
+</select>
+
+<button type="submit"
+        name="action"
+        value="next">
+        Save and Add Next
+</button>
+
+<button type="submit"
+        name="action"
+        value="finish">
+        Save and Finish
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

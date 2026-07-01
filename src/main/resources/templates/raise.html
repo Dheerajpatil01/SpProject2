@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Raise Salary</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    margin:0;
+}
+
+.navbar{
+    background:#1e3a8a;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:25px;
+    font-size:18px;
+}
+
+.container{
+    width:450px;
+    margin:60px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px 20px;
+}
+
+.error{
+    color:red;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+    <a th:href="@{/create}">Create</a>
+    <a th:href="@{/display}">Display</a>
+    <a th:href="@{/raise}">Raise Salary</a>
+    <a th:href="@{/exit}">Exit</a>
+</div>
+
+<div class="container">
+
+<h2>Raise Salary</h2>
+
+<form th:action="@{/raiseSalary}" method="post">
+
+<label>Employee Name</label>
+<input type="text" name="name">
+
+<label>Salary Increase Percentage (1-10)</label>
+<input type="number" name="percent" min="1" max="10">
+
+<button type="submit">Update and Next</button>
+
+<a th:href="@{/exit}">
+    <button type="button">Exit</button>
+</a>
+
+</form>
+
+<p class="error" th:text="${message}"></p>
+
+</div>
+
+</body>
+</html>

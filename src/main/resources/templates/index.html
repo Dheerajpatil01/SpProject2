@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Management</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.navbar{
+    background:#1e3a8a;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:25px;
+    font-size:18px;
+}
+
+.container{
+    text-align:center;
+    margin-top:150px;
+}
+
+h1{
+    color:#1e3a8a;
+    font-size:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a th:href="@{/create}">Create</a>
+    <a th:href="@{/display}">Display</a>
+    <a th:href="@{/raise}">Raise Salary</a>
+    <a th:href="@{/exit}">Exit</a>
+</div>
+
+<div class="container">
+    <h1>Employee Management System</h1>
+</div>
+
+</body>
+</html>

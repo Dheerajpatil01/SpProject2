@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thank You</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.navbar{
+    background:#1e3a8a;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:25px;
+    font-size:18px;
+}
+
+.container{
+    text-align:center;
+    margin-top:180px;
+}
+
+h1{
+    color:#1e3a8a;
+    font-size:50px;
+}
+
+p{
+    font-size:22px;
+    color:gray;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+    <a th:href="@{/create}">Create</a>
+    <a th:href="@{/display}">Display</a>
+    <a th:href="@{/raise}">Raise Salary</a>
+    <a th:href="@{/exit}">Exit</a>
+</div>
+
+<div class="container">
+    <h1>Thank You</h1>
+    <p>Thank You So Much For Using My Application</p>
+</div>
+
+</body>
+</html>
